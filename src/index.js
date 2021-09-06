@@ -1,9 +1,9 @@
-import ZgProgressSlider from  './controls/ZgProgressSlider'
+import ZgProgressSlider from  './controls/ZgProgressSlider';
 
-const package = () => {
+const controls = () => {
     return {
       ZgProgressSlider: ZgProgressSlider
         // We can add here multiple components in the future
     }
-}
-export default package()
+};
+export default controls();

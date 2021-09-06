@@ -3,22 +3,30 @@
   "version": "0.0.2",
   "description": "",
   "main": "index.js",
-  "dependencies": {
+  "peerDependencies": {
+    "node-sass": "^5.0.0",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "^4.0.3",
+    "react-draggable": "^4.4.3",
     "react-redux": "^7.2.0",
-    "react-draggable": "^4.4.3"
+    "react-scripts": "^4.0.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "react-scripts build"
+    "build": "rollup -c"
   },
   "author": "Hassan El-Zarkawy",
   "license": "ISC",
   "devDependencies": {
-    "rollup": "^2.56.3"
+    "@babel/cli": "^7.15.4",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.4",
+    "@babel/preset-react": "^7.14.5",
+    "@rollup/plugin-babel": "^5.3.0",
+    "autoprefixer": "^10.3.4",
+    "rollup": "^2.56.3",
+    "rollup-plugin-styles": "^3.14.1"
   },
   "repository": {
     "type": "git",

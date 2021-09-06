@@ -3,7 +3,7 @@ import Draggable from 'react-draggable';
 import './_styles.scss';
 import {OverlayTrigger, Tooltip} from "react-bootstrap";
 import {connect} from 'react-redux';
-import {updateProgressbarWidthAction} from "../../../actions/milestonesActions";
+//import {updateProgressbarWidthAction} from "../../../actions/milestonesActions";
 
 class ZgProgressSlider extends Component {
     constructor(props) {
@@ -190,7 +190,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    updateProgressbarWidth: newWidth => dispatch(updateProgressbarWidthAction(newWidth))
+    //updateProgressbarWidth: newWidth => dispatch(updateProgressbarWidthAction(newWidth))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ZgProgressSlider);

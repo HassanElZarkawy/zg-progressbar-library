@@ -1,25 +1,24 @@
 {
   "name": "@hassanelzarkawy/zg-progressbar-library",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "dependencies": {
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
+    "react-scripts": "^4.0.3",
     "react-redux": "^7.2.0",
     "react-draggable": "^4.4.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "react-scripts build"
   },
   "author": "Hassan El-Zarkawy",
   "license": "ISC",
   "devDependencies": {
     "rollup": "^2.56.3"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
   },
   "repository": {
     "type": "git",

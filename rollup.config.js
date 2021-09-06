@@ -1,6 +1,6 @@
 import styles from "rollup-plugin-styles";
 const autoprefixer = require('autoprefixer');
-import { terser } from 'rollup-plugin-terser'
+//import { terser } from 'rollup-plugin-terser'
 import babel from '@rollup/plugin-babel';
 
 // the entry point for the library
@@ -19,11 +19,7 @@ var MODE = [
   }
 ]
 
-
-
-
 var config = []
-
 
 MODE.map((m) => {
     var conf = {

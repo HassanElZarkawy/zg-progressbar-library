@@ -47,29 +47,30 @@ jobs:
       - run: npm install
       - run: npm version prerelease --preid=ci-$GITHUB_RUN_ID --no-git-tag-version
       - run: npm run build
-      # - run: npm pack
-      - name: Upload
-        uses: actions/upload-artifact@v2
-        with:
-            name: package
-            path: "*.tgz"
+      - run: npm publish
+  #     - run: npm pack
+  #     - name: Upload
+  #       uses: actions/upload-artifact@v2
+  #       with:
+  #           name: package
+  #           path: "*.tgz"
 
-  publish:
-    name: "Publish to GitHub Packages"
-    needs: [package]
-    runs-on: ubuntu-18.04
-    if: github.repository_owner == 'hassanelzarkawy' # && github.token != ''
-    steps:
-    - name: Upload
-      uses: actions/download-artifact@v2
-      with:
-          name: package
-    - uses: actions/setup-node@v1
-      with:
-        node-version: ${{ env.NODE_VERSION }}
-        registry-url: https://npm.pkg.github.com/
-        scope: "@hassanelzarkawy"
-    - run: echo "registry=https://npm.pkg.github.com/@hassanelzarkawy" >> .npmrc
-    - run: npm publish $(ls *.tgz)
-      env:
-        NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+  # publish:
+  #   name: "Publish to GitHub Packages"
+  #   needs: [package]
+  #   runs-on: ubuntu-18.04
+  #   if: github.repository_owner == 'hassanelzarkawy' # && github.token != ''
+  #   steps:
+  #   - name: Upload
+  #     uses: actions/download-artifact@v2
+  #     with:
+  #         name: package
+  #   - uses: actions/setup-node@v1
+  #     with:
+  #       node-version: ${{ env.NODE_VERSION }}
+  #       registry-url: https://npm.pkg.github.com/
+  #       scope: "@hassanelzarkawy"
+  #   - run: echo "registry=https://npm.pkg.github.com/@hassanelzarkawy" >> .npmrc
+  #   - run: npm publish $(ls *.tgz)
+  #     env:
+  #       NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

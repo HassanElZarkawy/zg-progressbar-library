@@ -19,6 +19,15 @@
     var css = ".single-milestone-hidden .progress-container {\n  opacity: 0.5; }\n\n.progress-container {\n  opacity: 1;\n  transition: 500ms;\n  display: block;\n  width: 100%;\n  height: 75px;\n  position: relative; }\n\n.milestone-progress-bar {\n  text-align: left;\n  -webkit-font-smoothing: subpixel-antialiased;\n  cursor: pointer;\n  color: rgba(255, 255, 255, 0.8);\n  -webkit-box-direction: normal;\n  box-sizing: border-box;\n  padding: 0;\n  border: 0;\n  font: inherit;\n  vertical-align: baseline;\n  position: relative;\n  height: 30px;\n  width: calc(100% - 60px);\n  margin-left: 30px;\n  margin-right: 30px;\n  background: linear-gradient(270deg, #a2aaa7 0, #76988b 34%, #828383 67%, #6f7070 100%);\n  opacity: 0.6;\n  box-shadow: 0 0 44px 0 rgba(255, 255, 255, 0.25);\n  clip-path: polygon(100% 0, 0 50%, 100% 100%);\n  top: 50%;\n  transform: translateY(-50%);\n  z-index: 1; }\n\n.milestone-user-draggable {\n  user-select: none;\n  position: absolute;\n  top: 50%;\n  margin-top: -30px;\n  z-index: 9; }\n  .milestone-user-draggable .milestone-user-img {\n    opacity: 0.9;\n    transition: 500ms;\n    --webkit-transition: 500ms;\n    -webkit-user-select: none;\n    -khtml-user-select: none;\n    -moz-user-select: none;\n    -o-user-select: none;\n    -ms-user-select: none;\n    user-select: none;\n    -webkit-user-drag: none;\n    -khtml-user-drag: none;\n    -moz-user-drag: none;\n    -o-user-drag: none;\n    -ms-user-drag: none;\n    user-drag: none;\n    width: 60px;\n    height: 60px;\n    display: block;\n    z-index: 10;\n    border-radius: 50%; }\n    .milestone-user-draggable .milestone-user-img:hover {\n      transform: scale(1.15);\n      opacity: 1; }\n\n.completion-checkmark {\n  position: absolute;\n  top: 5px;\n  right: -37px;\n  width: 45px;\n  height: 45px;\n  z-index: 99; }\n\n.milestones-extra-controls {\n  clip-path: polygon(50% 50%, 100% 60%, 100% 100%, 0% 100%, 0% 60%);\n  width: 120px;\n  height: 120px;\n  border-radius: 50%;\n  position: absolute;\n  top: -30px;\n  left: -30px;\n  z-index: -1; }\n\n.milestone-percent-indicator {\n  display: block;\n  position: absolute;\n  bottom: 3px;\n  color: white;\n  width: 120px;\n  text-align: center;\n  font-size: 1rem;\n  font-family: Lato;\n  font-weight: 400; }\n\n.milestone-swap {\n  display: block;\n  bottom: 1px;\n  position: absolute;\n  left: 14px;\n  font-size: 1.5rem;\n  opacity: 0.7;\n  cursor: pointer; }\n  .milestone-swap:hover {\n    opacity: 1; }\n\n.milestone-chat {\n  display: block;\n  bottom: 4px;\n  position: absolute;\n  right: 14px;\n  font-size: 18px;\n  opacity: 0.7;\n  cursor: pointer; }\n  .milestone-chat:hover {\n    opacity: 1; }\n\n.milestone-user-img-container {\n  transition: left 500ms; }\n\n.progress-container .milestones-extra-controls {\n  transition: opacity 500ms;\n  opacity: 0; }\n\n.progress-container:hover .milestones-extra-controls {\n  opacity: 1; }\n";
     n(css,{});
 
+    var ACT_MS_PROGRESSBAR_WIDTH = 'ACT_MS_PROGRESSBAR_WIDTH';
+
+    var updateProgressbarWidthAction = function updateProgressbarWidthAction(progressWidth) {
+      return {
+        type: ACT_MS_PROGRESSBAR_WIDTH,
+        progressWidth: progressWidth
+      };
+    };
+
     function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf__default['default'](Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf__default['default'](this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn__default['default'](this, result); }; }
 
     function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
@@ -270,7 +279,10 @@
     };
 
     var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-      return {//updateProgressbarWidth: newWidth => dispatch(updateProgressbarWidthAction(newWidth))
+      return {
+        updateProgressbarWidth: function updateProgressbarWidth(newWidth) {
+          return dispatch(updateProgressbarWidthAction(newWidth));
+        }
       };
     };
 

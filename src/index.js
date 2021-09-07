@@ -1,4 +1,4 @@
-import ZgProgressSlider from  '/controls/ZgProgressSlider';
+import ZgProgressSlider from "./controls/ZgProgressSlider";
 
 
 export default ZgProgressSlider;

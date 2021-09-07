@@ -5,15 +5,13 @@
   "main": "dist/index.esm.js",
   "dependencies": {
     "@babel/runtime": "^7.12.5",
-    "node-sass": "^5.0.0"
-  },
-  "peerDependencies": {
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
     "react-draggable": "^4.4.3",
     "react-redux": "^7.2.0",
-    "react-scripts": "^4.0.3"
+    "react-scripts": "^4.0.3",
+    "node-sass": "^5.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
